@@ -16,7 +16,6 @@ export function AuthProvider({ children }) {
         const response = await axios.post("/auth/refresh");
         setToken(response.data.accessToken);
         setUser(response.data.user);
-        console.log(response.data.user);
         setSigningIn(false);
       } catch (error) {
         console.error(error);

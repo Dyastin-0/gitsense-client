@@ -12,7 +12,6 @@ export const RepositoryProvider = ({ children }) => {
         isAxiosReady ? "/repository" : null,
         async () => {
             const response = await api.get("/repository");
-            console.log(response.data);
             return response.data;
         }
     );

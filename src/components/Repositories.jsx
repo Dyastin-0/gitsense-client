@@ -7,8 +7,8 @@ const Repositories = () => {
     const { user } = useAuth();
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 bg-primary p-4 gap-2">
-    {repositories?.map((repository) => (repository.owner.login == user.Login &&
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 rounded-md bg-primary p-4 gap-2">
+    {repositories?.map((repository) => (repository.owner.login == user.login &&
       <Repository key={repository.id} repository={repository} />
   ))}
   </div>
