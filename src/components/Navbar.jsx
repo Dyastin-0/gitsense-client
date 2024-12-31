@@ -99,10 +99,10 @@ const Navbar = ({ toggleSideNavbar }) => {
             variant="default_rounded"
             p={1}
             name={
-              user?.ImageURL ? (
+              user?.Avatar ? (
                 <img
                   loading="lazy"
-                  src={user?.ImageURL}
+                  src={user?.Avatar}
                   className="overflow-hidden max-w-[30px] max-h-[30px] rounded-full"
                 />
               ) : (

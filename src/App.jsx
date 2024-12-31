@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 const Signin = lazy(() => import("./pages/Signin"));
-const Signup = lazy(() => import("./pages/Signup"));
 const Home = lazy(() => import("./pages/Home"));
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_API_URL;
@@ -20,7 +19,6 @@ const App = () => {
       <Suspense>
         <Routes>
           <Route path="/sign-in" element={<Signin />} />
-          <Route path="/sign-up" element={<Signup />} />
           <Route element={<ProtectedRoute />}>
             <Route path="/home" element={<Home />} />
           </Route>
