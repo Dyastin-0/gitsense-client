@@ -1,27 +1,37 @@
-import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import useAxios from "../hooks/useAxios";
-import Button from "./ui/Button"
-import TruncatedText from "./ui/TruncatedText"
+import TruncatedText from "./ui/TruncatedText";
+import useContextMenu from "./hooks/useContextMenu";
+import useModal from "./hooks/useModal";
+import CreateWebhook from "./modals/CreateWebhook";
 
 const Repository = ({ repository }) => {
-  const { api } = useAxios();
+  const { setOpen, setModal } = useModal();
 
-  // const handleCreateWebHook = () => {
-  //   api.post(`/webhook`, {
-  //     repository: repository.name,
-  //     secret: "", 
-  //     name: "",
-  //   })
-  // }
+  const menuOptions = [
+    {
+      label: "Create Webhook",
+      onClick: () => {
+        setModal(<CreateWebhook repository={repository} />);
+        setOpen(true);
+      },
+    },
+  ];
+
+  const { onContextMenu, ContextMenu } = useContextMenu(menuOptions);
 
   return (
-    <div className="relative flex flex-col h-[140px] bg-secondary rounded-md p-4 text-sm">
-        <TruncatedText text={repository.name} className="font-semibold" />
-        <TruncatedText text={repository.full_name} className="text-secondary-foreground" />
-        <p className="mt-auto">{repository.description}</p>
-        <Button variant="default_rounded" icon={faEllipsisH} className="absolute w-fit right-4 top-4" />
+    <div
+      className="relative flex flex-col h-[140px] bg-secondary rounded-md p-4 text-sm"
+      onContextMenu={onContextMenu}
+    >
+      <TruncatedText text={repository.name} className="font-semibold" />
+      <TruncatedText
+        text={repository.full_name}
+        className="text-secondary-foreground"
+      />
+      <p className="mt-auto">{repository.description}</p>
+      <ContextMenu />
     </div>
-  )
-}
-  
-  export default Repository
+  );
+};
+
+export default Repository;
