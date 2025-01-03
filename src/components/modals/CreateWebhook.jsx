@@ -44,7 +44,7 @@ const CreateWebhook = ({ repository }) => {
 
   return (
     <GenericModal
-      title={`Create Webhook for ${repository.name}`}
+      title={`Create a Webhook for ${repository.name}`}
       className="w-[700px]"
     >
       <form className="flex flex-col gap-2" onSubmit={handleSubmit}>
