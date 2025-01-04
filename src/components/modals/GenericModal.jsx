@@ -4,14 +4,14 @@ import Button from "../ui/Button";
 import TruncatedText from "../ui/TruncatedText";
 import clsx from "clsx";
 
-const GenericModal = ({ title, children, className }) => {
+const GenericModal = ({ title, children, className, containerClassName }) => {
   const { setOpen } = useModal();
 
   return (
     <div
       className={clsx(
-        "relative flex flex-col w-[400px] max-w-full p-4 gap-4 rounded-md bg-primary",
-        "text-xs text-primary-foreground border border-secondary-accent overfflow-hidden z-50",
+        "relative flex flex-col h-[75vh] w-[400px] max-w-full p-4 gap-4 rounded-md bg-primary",
+        "text-xs text-primary-foreground border border-secondary-accent overflow-hidden z-50",
         className
       )}
     >
@@ -27,7 +27,14 @@ const GenericModal = ({ title, children, className }) => {
         />
       </div>
 
-      {children}
+      <div
+        className={
+          "scrollbar-thin scrollbar-track-transparent scrollbar-thumb-black" +
+          containerClassName
+        }
+      >
+        {children}
+      </div>
     </div>
   );
 };
