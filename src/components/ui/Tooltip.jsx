@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import clsx from "clsx";
 
-const Tooltip = ({ children, text, disableTooltip }) => {
+const Tooltip = ({ children, text, disableTooltip, className }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ top: 0, left: 0 });
   const tooltipRef = useRef(null);
@@ -55,7 +56,7 @@ const Tooltip = ({ children, text, disableTooltip }) => {
 
   return (
     <div
-      className="relative"
+      className={clsx("relative", className)}
       ref={triggerRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

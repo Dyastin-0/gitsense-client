@@ -22,7 +22,7 @@ import Tooltip from "./ui/Tooltip";
 
 const Navbar = ({ toggleSideNavbar }) => {
   const navigate = useNavigate();
-  const { toggleTheme, icon } = useThemeToggle();
+  const { toggleTheme, icon, theme } = useThemeToggle();
   const { setToken, token, setUser, user } = useAuth();
   const { viewWidth } = useViewport();
   const [isScrollingDown, setIsScrollingDown] = useState(false);
@@ -85,6 +85,24 @@ const Navbar = ({ toggleSideNavbar }) => {
           ))}
       </div>
       <div className="flex w-fit gap-2 justify-center items-center">
+        <Tooltip text="Repository" className="w-[30px] h-[30px]">
+          <a
+            className="outline-none"
+            href="https://github.com/Dyastin-0/gitsense"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className=" transition-all duration-300 rounded-full
+              focus:shadow-[var(--accent-secondary)_0_0_0_2px]
+              active:shadow-[var(--highlight)_0_0_0_2px]
+              hover:shadow-[var(--accent-secondary)_0_0_0_2px]"
+              src={
+                theme === "dark" ? "github-mark-white.png" : "github-mark.png"
+              }
+            />
+          </a>
+        </Tooltip>
         <Tooltip text="Toggle theme">
           <Button
             variant="default_rounded"
