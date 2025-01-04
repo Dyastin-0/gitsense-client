@@ -22,6 +22,11 @@ const WebhookForm = ({ repository }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!name || !secret || !ipAddress || !user || !privateKey || !hostKey) {
+      toastInfo("Missing required fields");
+      return;
+    }
+
     api
       .post(`/webhook`, {
         name,
