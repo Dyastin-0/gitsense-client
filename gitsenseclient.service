@@ -1,0 +1,15 @@
+[Unit]
+Description=Gitsense client
+After=network.target multi-user.target
+
+[Service]
+User=ubuntu
+
+WorkingDirectory=/home/ubuntu/gitsense-client
+ExecStart=/usr/bin/npm start
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=gitsenseclient
+
+[Install]
+WantedBy=multi-user.target
