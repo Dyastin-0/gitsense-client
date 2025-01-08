@@ -28,19 +28,9 @@ const WebhookForm = ({ repository }) => {
     "issue_comment",
     "fork",
     "star",
-    "watch",
     "create",
     "delete",
     "release",
-    "workflow_run",
-    "workflow_dispatch",
-    "pull_request_review",
-    "pull_request_review_comment",
-    "deployment",
-    "deployment_status",
-    "member",
-    "repository",
-    "ping",
   ];
 
   const handleSubmit = (e) => {
