@@ -2,6 +2,7 @@ import { useState } from "react";
 import Button from "../ui/Button";
 import NormalInput from "../ui/NormalInput";
 import TextArea from "../ui/TextArea";
+import Selector from "../ui/Selector";
 import useModal from "../hooks/useModal";
 import useAxios from "../../hooks/useAxios";
 import useToast from "../hooks/useToast";
@@ -18,6 +19,29 @@ const WebhookForm = ({ repository }) => {
   const [privateKey, setPrivateKey] = useState("");
   const [hostKey, setHostKey] = useState("");
   const [callbackScript, setCallbackScript] = useState("");
+  const [selectedEvents, setSelectedEvents] = useState([]);
+
+  const events = [
+    "push",
+    "pull_request",
+    "issues",
+    "issue_comment",
+    "fork",
+    "star",
+    "watch",
+    "create",
+    "delete",
+    "release",
+    "workflow_run",
+    "workflow_dispatch",
+    "pull_request_review",
+    "pull_request_review_comment",
+    "deployment",
+    "deployment_status",
+    "member",
+    "repository",
+    "ping",
+  ];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,6 +57,7 @@ const WebhookForm = ({ repository }) => {
         secret,
         repository: repository.name,
         callback_script: callbackScript,
+        events: selectedEvents,
         ssh: {
           ip_address: ipAddress,
           user,
@@ -62,6 +87,13 @@ const WebhookForm = ({ repository }) => {
         required
         value={secret}
         onChange={(e) => setSecret(e.currentTarget.value)}
+      />
+      <h2 className="text-secondary-foreground">Events</h2>
+      <Selector
+        key="events"
+        items={events}
+        selectedItems={selectedEvents}
+        setSelectedItems={setSelectedEvents}
       />
       <h1 className="text-secondary-foreground">SSH</h1>
       <NormalInput
