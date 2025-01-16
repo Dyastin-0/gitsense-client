@@ -8,7 +8,7 @@ const Sidebar = () => {
   useEffect(() => {
     if (isAxiosReady) {
       api.get("/output").then((response) => {
-        console.log(response.data);
+        console.log("data: " + response.data);
       });
     }
   }, [api, isAxiosReady]);
