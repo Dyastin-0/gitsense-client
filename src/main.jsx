@@ -6,7 +6,6 @@ import { AuthProvider } from "./hooks/useAuth.jsx";
 import { ToastProvider } from "./components/hooks/useToast.jsx";
 import { ModalProvider } from "./components/hooks/useModal.jsx";
 import { RepositoryProvider } from "./hooks/useRepository.jsx";
-import { ContentProvider } from "./components/hooks/useContent.jsx";
 import { EventProvider } from "./hooks/useEvents.jsx";
 
 createRoot(document.getElementById("root")).render(
@@ -16,9 +15,7 @@ createRoot(document.getElementById("root")).render(
         <BrowserRouter>
           <RepositoryProvider>
             <EventProvider>
-              <ContentProvider>
-                <App />
-              </ContentProvider>
+              <App />
             </EventProvider>
           </RepositoryProvider>
         </BrowserRouter>
