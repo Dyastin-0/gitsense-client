@@ -10,7 +10,7 @@ const Event = ({ event }) => {
     <div className="flex flex-col p-2 gap-2 rounded-md text-xs text-primary-foreground">
       <span className="text-secondary-foreground">{`${event._id}`}</span>
       <Tooltip
-        text={dayjs(event.timestamp * 1000).format("MMMM D, YYYY h:mm A")}
+        text={dayjs(event.timestamp * 1000).format("MMMM D, YYYY HH:mm")}
       >
         <span className="w-fit">{dayjs(event.timestamp * 1000).fromNow()}</span>
       </Tooltip>

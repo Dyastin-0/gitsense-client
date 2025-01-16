@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-const Accordion = ({ title, children }) => {
+const Accordion = ({ title, text, children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const contentRef = useRef(null);
 
@@ -36,6 +36,7 @@ const Accordion = ({ title, children }) => {
           >
             <FontAwesomeIcon icon={faChevronDown} />
           </motion.div>
+          <span className="text-end text-secondary-foreground">{text}</span>
         </div>
       </button>
 
