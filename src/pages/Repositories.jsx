@@ -2,7 +2,7 @@ import RepositoriesComponent from "../components/Repositories";
 
 const Repositories = () => {
   return (
-    <div className="flex w-full h-full gap-3 p-3">
+    <div className="flex w-full h-full gap-3">
       <RepositoriesComponent />
     </div>
   );

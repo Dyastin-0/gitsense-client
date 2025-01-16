@@ -10,7 +10,7 @@ const Events = () => {
   const { events } = useEvents();
 
   return (
-    <div className="flex flex-col w-full h-full bg-primary">
+    <div className="flex flex-col w-full h-full bg-primary p-3 rounded-md">
       {events &&
         events.map((event, index) => (
           <Accordion
