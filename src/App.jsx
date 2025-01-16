@@ -7,7 +7,7 @@ import Sidebar from "./components/Sidebar";
 import useAuth from "./hooks/useAuth";
 
 const Signin = lazy(() => import("./pages/Signin"));
-const Home = lazy(() => import("./pages/Home"));
+const Repositories = lazy(() => import("./pages/Repositories"));
 const Events = lazy(() => import("./pages/Events"));
 
 axios.defaults.baseURL = import.meta.env.VITE_BASE_API_URL;
@@ -26,7 +26,7 @@ const App = () => {
             <Routes>
               <Route path="/sign-in" element={<Signin />} />
               <Route element={<ProtectedRoute />}>
-                <Route path="/repositories" element={<Home />} />
+                <Route path="/repositories" element={<Repositories />} />
                 <Route path="/events" element={<Events />} />
               </Route>
             </Routes>
