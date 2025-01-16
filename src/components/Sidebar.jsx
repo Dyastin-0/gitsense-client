@@ -1,22 +1,14 @@
-import { useEffect } from "react";
-import useAxios from "../hooks/useAxios";
+import useContent from "./hooks/useContent";
 import Button from "./ui/Button";
 
 const Sidebar = () => {
-  const { api, isAxiosReady } = useAxios();
-
-  useEffect(() => {
-    if (isAxiosReady) {
-      api.get("/output").then((response) => {
-        console.log("data: " + response.data);
-      });
-    }
-  }, [api, isAxiosReady]);
+  const { setContent } = useContent();
 
   return (
     <div className="flex flex-col min-w-[220px] h-full bg-primary rounded-md gap-2 p-4">
-      <Button text="Repositories" />
+      <Button text="Repositories" onClick={() => setContent("repositories")} />
       <Button text="Webhooks" />
+      <Button text="Events" onClick={() => setContent("events")} />
     </div>
   );
 };
