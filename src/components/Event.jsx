@@ -25,7 +25,6 @@ const Event = ({ event }) => {
         <>
           <h2 className="text-secondary-foreground">stderr</h2>
           <code className="bg-secondary whitespace-pre-wrap p-2 rounded-md">{`${event.stderr}`}</code>
-          <Separator />
         </>
       )}
     </div>
