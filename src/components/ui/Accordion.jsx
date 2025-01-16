@@ -36,8 +36,8 @@ const Accordion = ({ title, text, children }) => {
           >
             <FontAwesomeIcon icon={faChevronDown} />
           </motion.div>
-          <span className="text-end text-secondary-foreground">{text}</span>
         </div>
+        <span className="text-end text-secondary-foreground">{text}</span>
       </button>
 
       <motion.div
