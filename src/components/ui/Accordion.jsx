@@ -24,7 +24,7 @@ const Accordion = ({ title, children }) => {
   return (
     <div className="flex flex-col w-full max-w-full text-primary-foreground rounded-md bg-secondary p-2">
       <button
-        className="flex w-fit outline-none items-center text-primary-foreground text-xs font-semibold
+        className="flex w-fit outline-none items-center text-primary-foreground text-xs
         transition-colors duration-300 focus:text-primary-highlight hover:text-primary-highlight"
         onClick={toggleAccordion}
       >
