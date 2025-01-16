@@ -28,7 +28,7 @@ const Accordion = ({ title, text, children }) => {
         transition-colors duration-300 focus:text-primary-highlight hover:text-primary-highlight"
         onClick={toggleAccordion}
       >
-        <div className="flex w-full items-center gap-1 justify-between">
+        <div className="flex items-center gap-1 justify-between">
           {title}
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
