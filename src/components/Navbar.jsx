@@ -85,7 +85,7 @@ const Navbar = ({ toggleSideNavbar }) => {
           ))}
       </div>
       <div className="flex w-fit gap-2 justify-center items-center">
-        <Tooltip text="Repository" className="w-[28px] h-[28px]">
+        {/* <Tooltip text="Repository" className="w-[30px] h-[30px]">
           <a
             className="outline-none"
             href="https://github.com/Dyastin-0/gitsense"
@@ -102,7 +102,7 @@ const Navbar = ({ toggleSideNavbar }) => {
               }
             />
           </a>
-        </Tooltip>
+        </Tooltip> */}
         <Tooltip text="Toggle theme">
           <Button
             variant="default_rounded"
