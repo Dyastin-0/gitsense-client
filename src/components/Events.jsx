@@ -15,9 +15,9 @@ const Events = () => {
         events.map((event, index) => (
           <Accordion
             key={index}
-            title={`${event.webhook} - ${dayjs(
-              event.timestamp * 1000
-            ).fromNow()}`}
+            title={`${event.webhook} · ${dayjs(event.timestamp * 1000).format(
+              "MMMM D, YYYY h:mm"
+            )}`}
           >
             <Event event={event} />
           </Accordion>

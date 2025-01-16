@@ -8,10 +8,7 @@ dayjs.extend(relativeTime);
 const Event = ({ event }) => {
   return (
     <div className="flex flex-col p-2 gap-2 rounded-md text-xs text-primary-foreground">
-      <div className="flex gap-1">
-        <h1 className="text-xs font-semibold">{event.webhook}</h1>
-        <span className="text-secondary-foreground">{`${event._id}`}</span>
-      </div>
+      <span className="text-secondary-foreground">{`${event._id}`}</span>
       <Tooltip
         text={dayjs(event.timestamp * 1000).format("MMMM D, YYYY h:mm A")}
       >
