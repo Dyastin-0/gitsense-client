@@ -20,7 +20,7 @@ const Repository = ({ repository }) => {
 
   return (
     <div
-      className="relative flex flex-col h-[140px] bg-secondary rounded-md p-4 text-sm"
+      className="relative flex flex-col h-[140px] bg-secondary rounded-md p-3 text-xs"
       onContextMenu={onContextMenu}
     >
       <TruncatedText text={repository.name} className="font-semibold" />

@@ -5,7 +5,7 @@ const Home = () => {
   const { Content } = useContent();
 
   return (
-    <div className="flex w-full h-full gap-4 p-4">
+    <div className="flex w-full h-full gap-3 p-3">
       <Sidebar />
       {Content}
     </div>

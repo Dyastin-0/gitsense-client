@@ -52,7 +52,7 @@ const Navbar = ({ toggleSideNavbar }) => {
 
   return (
     <motion.div
-      className={`sticky flex justify-between w-full p-4 gap-3 z-40 bg-primary
+      className={`sticky flex justify-between w-full p-3 gap-3 z-40 bg-primary
       ${lastScrollY > 50 ? "border border-secondary-accent" : ""}`}
       initial={{ y: 0 }}
       animate={isScrollingDown ? { y: -100 } : { y: 0 }}
@@ -85,7 +85,7 @@ const Navbar = ({ toggleSideNavbar }) => {
           ))}
       </div>
       <div className="flex w-fit gap-2 justify-center items-center">
-        <Tooltip text="Repository" className="w-[30px] h-[30px]">
+        <Tooltip text="Repository" className="w-[28px] h-[28px]">
           <a
             className="outline-none"
             href="https://github.com/Dyastin-0/gitsense"

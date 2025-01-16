@@ -2,8 +2,8 @@ import Separator from "./ui/Separator";
 
 const Event = ({ event }) => {
   return (
-    <div className="flex flex-col p-2 gap-2 rounded-md text-sm text-primary-foreground">
-      <h1 className="text-sm font-semibold">{event.webhook}</h1>
+    <div className="flex flex-col p-2 gap-2 rounded-md text-xs text-primary-foreground">
+      <h1 className="text-xs font-semibold">{event.webhook}</h1>
       <span className="text-secondary-foreground">{`Event ID: ${event.id}`}</span>
       <Separator />
       <h2 className="text-secondary-foreground">Output</h2>

@@ -41,7 +41,7 @@ export function ModalProvider({ children }) {
                   variant="default_rounded"
                   onClick={() => setOpen(false)}
                   icon={faX}
-                  className="fixed top-4 right-4 text-[.75rem]"
+                  className="fixed top-3 right-4 text-[.75rem]"
                 />
                 {modal}
               </div>

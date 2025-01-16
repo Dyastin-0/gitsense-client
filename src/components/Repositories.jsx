@@ -7,7 +7,7 @@ const Repositories = () => {
   const { user } = useAuth();
 
   return (
-    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 rounded-md bg-primary p-4 gap-2">
+    <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 rounded-md bg-primary p-3 gap-2">
       {repositories?.map(
         (repository) =>
           repository.owner.login == user.login && (
