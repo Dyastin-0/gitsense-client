@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP="gitsense"
+APP="gitsense-client"
 SERVICE_FILE="gitsenseclient.service"
 SERVICE_PATH="/etc/systemd/system/$SERVICE_FILE"
 
