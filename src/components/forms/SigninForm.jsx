@@ -9,7 +9,7 @@ const SigninForm = ({}) => {
   const { token } = useAuth();
 
   useEffect(() => {
-    token && navigate("/home");
+    token && navigate("/repositories");
   }, [token]);
 
   return (
